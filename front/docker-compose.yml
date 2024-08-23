@@ -1,0 +1,27 @@
+version: '3.8'
+
+networks:
+  nodejsnet:
+    driver: bridge
+
+services:
+  nodejs:
+    image: node:20.14.0      #镜像名称，就是制作镜像时候的名字
+    container_name: tower-dungeon #容器名称，可以省略。系统会使用默认名字
+    volumes:
+      - type: bind
+        source: C:\Users\李侑融\side\dungeon-of-the-tower\front
+        target: /app
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 5173:5173 # 前边是本地端口，后边是容器端口，意识是把本地7000映射到容器7000端口
+    networks:
+     - nodejsnet
+    command: yarn dev
+    restart: always
+    cpus: 2

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: kurewa-gothic;
+  src: url(https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Regular.woff2)
+    format('woff2');
+}
+@font-face {
+  font-family: kurewa-gothic-bold;
+  src: url(https://cdn.jsdelivr.net/gh/max32002/kurewa-gothic@1.071/webfont/CJK%20TC/KurewaGothicCjkTc-Bold.woff2)
+    format('woff2');
+}
+html,
+body {
+  height: 100%;
+}
+#app {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+}
