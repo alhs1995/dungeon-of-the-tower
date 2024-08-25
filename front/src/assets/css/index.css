@@ -11,6 +11,7 @@
 html,
 body {
   height: 100%;
+  font-family: kurewa-gothic-bold
 }
 #app {
   background-color: #000;
