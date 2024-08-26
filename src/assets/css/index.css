@@ -11,10 +11,13 @@
 html,
 body {
   height: 100%;
-  font-family: kurewa-gothic-bold
+  font-family: kurewa-gothic;
 }
 #app {
   background-color: #000;
   width: 100%;
   height: 100%;
+}
+div {
+  box-sizing: border-box;
 }
