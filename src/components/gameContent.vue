@@ -14,7 +14,7 @@
         :key="option.sort"
         class="select-option"
         @mouseenter="hoverOption(option.desc)"
-        @click="callTest()"
+        @click="callTest(option.value)"
       >
         {{ option.context }}
       </button>

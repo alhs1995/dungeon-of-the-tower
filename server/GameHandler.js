@@ -45,6 +45,12 @@ function getGameNowData() {
   })
 }
 
+// str 力量
+// dex 敏捷
+// con 體質
+// int 智力
+// wis 睿智
+// cha 魅力
 export default {
   test,
   getGameNowData

@@ -1,0 +1,42 @@
+{
+  "status": {
+    "str": 15,
+    "dex": 12,
+    "con": 14,
+    "int": 10,
+    "wis": 13,
+    "cha": 8
+  },
+  "levelStatusAdd": {
+    "str": 2,
+    "dex": 0.5,
+    "con": 1,
+    "int": 0,
+    "wis": 0.3,
+    "cha": 0
+  },
+  "expPerLevel": "3^${level}*100",
+  "skill": [
+    {
+      "name": "普通攻擊",
+      "atk": "2*${d7}+2",
+      "target": 1,
+      "dec": "",
+      "unloclLevel": 0
+    },
+    {
+      "name": "開山斬",
+      "atk": "6*${d2}+10",
+      "target": 1,
+      "dec": "強力的縱劈",
+      "unloclLevel": 5
+    },
+    {
+      "name": "橫掃斬",
+      "atk": "3*${d7}+6",
+      "target": 2,
+      "dec": "強力的橫斬，可以一次攻擊兩個目標",
+      "unloclLevel": 7
+    }
+  ]
+}
