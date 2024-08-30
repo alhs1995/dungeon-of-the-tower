@@ -3,7 +3,10 @@
     class="game-content"
     :style="{ '--width': config.width + 'px', '--height': config.height + 'px' }"
   >
-    <div class="top-draw">圖片</div>
+    <div class="top-draw">
+      <MonsterGoblin :level="1" :key="'goblin1'" ref="goblin1" />
+      <MonsterGoblin :level="9" :key="'goblin2'" />
+    </div>
     <div class="mid-content">
       <div class="content-text" v-html="showText"></div>
       <div v-show="contentInterval" class="skip-btn" @click="clickSkip">&gt;&gt;Skip</div>
@@ -14,7 +17,7 @@
         :key="option.sort"
         class="select-option"
         @mouseenter="hoverOption(option.desc)"
-        @click="callTest(option.value)"
+        @click="goblin1.goBattle()"
       >
         {{ option.context }}
       </button>
@@ -25,10 +28,13 @@
 
 <script setup>
 import { onMounted, ref, computed, inject } from 'vue'
+import MonsterGoblin from '$/battle/MonsterGoblin.vue'
 const { config } = defineProps(['config'])
 onMounted(() => {
   callTest()
+  console.log(goblin1.value.goBattle())
 })
+const goblin1 = ref(null)
 const contentText = ref('')
 const contentTextShowIndex = ref(1)
 const contentInterval = ref(undefined)
@@ -117,6 +123,10 @@ $radius-drawn-6-r: 150px 30px 205px 225px / 28px 100px 20px 15px;
   flex-direction: column;
   .top-draw {
     flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
   }
   .mid-content {
     flex: 0 0 25%;
