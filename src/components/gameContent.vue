@@ -28,7 +28,7 @@
 
 <script setup>
 import { onMounted, ref, computed, inject } from 'vue'
-import MonsterGoblin from '$/battle/MonsterGoblin.vue'
+import MonsterGoblin from '@/components/battle/MonsterGoblin.vue'
 const { config } = defineProps(['config'])
 onMounted(() => {
   callTest()

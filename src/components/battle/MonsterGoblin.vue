@@ -6,6 +6,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { rollDice } from '@/utils/battleSys.js'
 const defStatus = {
   str: 7,
   dex: 6,
@@ -25,14 +26,14 @@ const levelAddStatus = {
 const allSkillList = [
   {
     name: '木鎚攻擊',
-    atk: '2*d4+2',
+    atk: '2d4+2',
     target: 1,
     unloclLevel: 0,
     chance: 50
   },
   {
     name: '投石',
-    atk: '4*d2+1',
+    atk: '4d2+1',
     target: 1,
     unloclLevel: 0,
     chance: 50
@@ -70,7 +71,7 @@ const dealDmg = () => {
       })
     ].atk
   const dmg = Math.floor(
-    eval(atk.replace(/d\d/, eval(Math.random() * atk.match(/d\d/)[0].replace('d', '') + 1)))
+    rollDice(atk)
   )
 }
 defineExpose({ goBattle })
